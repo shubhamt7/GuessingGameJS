@@ -30,6 +30,10 @@ checkButton.addEventListener('click', function(){
         }
         number.textContent = randomNumber
         message.textContent =  `You guessed it!!`;
+
+        document.querySelector('.number').style.width = '40rem';
+        document.querySelector('body').style.backgroundColor = '#60b347';
+
         return;
         
     }
@@ -55,10 +59,11 @@ checkButton.addEventListener('click', function(){
 })
 
 again.addEventListener('click', function(){
-
     message.textContent = "Start guessing...";
     number.textContent = "?";
-    randomNumber = undefined;
+    randomNumber = Number(Math.trunc(Math.random()*20 + 1));
+    document.querySelector('body').style.backgroundColor = '#222';
+    document.querySelector('.number').style.width = '15rem';
     scoreValue = 20;
     score.textContent = scoreValue;
     highScore.textContent = highScoreValue;
